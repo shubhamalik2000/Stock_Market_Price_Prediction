@@ -7,12 +7,12 @@ from plotly import graph_objs as go
 
 from sklearn.preprocessing import MinMaxScaler
 
-with open(r"C:\Users\LENOVO\Project\Stock Market Prediction forecasting\model_pickle",'rb') as f:
+with open(r"model_pickle",'rb') as f:
     model = pickle.load(f)
 
 
 def load_data():
-    data = pd.read_csv(r"C:\Users\LENOVO\Project\Stock Market Prediction forecasting\finaldata.csv")
+    data = pd.read_csv(r"finaldata.csv")
     lclose = pd.DataFrame(data.Close)
     test = lclose[-365:]
     test = np.array(test)

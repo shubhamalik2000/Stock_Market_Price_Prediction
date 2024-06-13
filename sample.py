@@ -22,6 +22,8 @@ def forecast(n):
     sample = scaler.fit_transform(sample)
     sample = sample.reshape(-1,1)
 
+    st.write(samplpe)
+
     with open("model_pickle",'rb') as f:
         model = pickle.load(f)
     

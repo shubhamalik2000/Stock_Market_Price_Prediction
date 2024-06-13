@@ -24,7 +24,7 @@ def forecast(n):
 
     st.write(sample)
 
-    with open("model_pickle",'rb') as f:
+    with open("model_pickle.pkl",'rb') as f:
         model = pickle.load(f)
     
     for i in range(n):

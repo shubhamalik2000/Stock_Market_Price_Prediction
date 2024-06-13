@@ -7,7 +7,7 @@ from plotly import graph_objs as go
 
 from sklearn.preprocessing import MinMaxScaler
 
-with open(r"model_pickle.pkl",'rb') as f:
+with open(r"model_pickle",'rb') as f:
     model = pickle.load(f)
 
 

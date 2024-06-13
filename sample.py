@@ -7,10 +7,6 @@ from plotly import graph_objs as go
 
 from sklearn.preprocessing import MinMaxScaler
 
-with open("model_pickle",'rb') as f:
-    model = pickle.load(f)
-
-
 def load_data():
     data = pd.read_csv("finaldata.csv")
     lclose = pd.DataFrame(data.Close)
@@ -25,6 +21,9 @@ def forecast(n):
     scaler = MinMaxScaler(feature_range = (0,1))
     sample = scaler.fit_transform(sample)
     sample = sample.reshape(-1,1)
+
+    with open("model_pickle",'rb') as f:
+    model = pickle.load(f)
     
     for i in range(n):
         pred = model.predict(sample)

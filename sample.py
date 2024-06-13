@@ -23,7 +23,7 @@ def forecast(n):
     sample = sample.reshape(-1,1)
 
     with open("model_pickle",'rb') as f:
-    model = pickle.load(f)
+        model = pickle.load(f)
     
     for i in range(n):
         pred = model.predict(sample)

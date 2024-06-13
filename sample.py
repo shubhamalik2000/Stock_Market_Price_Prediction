@@ -4,6 +4,7 @@ import numpy as np
 import pickle
 import yfinance as yf
 from plotly import graph_objs as go
+from tensorflow.keras.models import load_model
 
 from sklearn.preprocessing import MinMaxScaler
 
@@ -22,10 +23,7 @@ def forecast(n):
     sample = scaler.fit_transform(sample)
     sample = sample.reshape(-1,1)
 
-    st.write(sample)
-
-    with open("model_pickle.pkl",'rb') as f:
-        model = pickle.load(f)
+    model = load_model('model.h5')    
     
     for i in range(n):
         pred = model.predict(sample)
